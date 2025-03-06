@@ -2,3 +2,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container { 
+    margin-top: 2rem;
+    padding: 2rem;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.form { 
+    margin-bottom: 5rem;
+}
+
+.form-fields { 
+    display: flex; 
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mat-mdc-form-field-error { 
+    margin-bottom: 1rem;
+}

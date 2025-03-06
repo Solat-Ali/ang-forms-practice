@@ -1,0 +1,38 @@
+<div class="form form-template">
+  <h2 class="header">
+      Reactive Driven Form
+  </h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-fields">
+          <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input #email matInput type="email" name="email" placeholder="Email" formControlName="email">
+
+              <mat-error *ngIf="emailCtrl?.hasError('required')">
+                  Email is required
+              </mat-error>
+
+              <mat-error *ngIf="emailCtrl?.hasError('email')">
+                  Invalid email
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput name="password" type="password" placeholder="Password" formControlName="password">
+
+              <mat-error *ngIf="passwordCtrl?.hasError('required')">
+                Password is required
+            </mat-error>
+          </mat-form-field>
+      </div>
+
+      <button mat-flat-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+      <button mat-flat-button color="error" (click)="reset()">Reset</button>
+
+  </form>
+
+  {{ loginForm.value | json }}
+  
+</div>
